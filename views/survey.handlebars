@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Pet Survey</title>
+</head>
+
+<body>
+    <div class="header-survey">
+        <div class="container">
+            <div class="row">
+                <h3>Adoption Survey</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3 container">
+        <div class="row" style="padding-top: 6em; border-bottom: 1px solid lightgrey; padding: 3em 0 1em 0">
+            <h5 style="margin-right: 3em">Welcome to AppName!</h5>
+            <h6>Some basic info helps us match your future dog with a compatible forever home.</h6>
+        </div>
+        <div class="row">
+            <div class="survey">
+                <form action="" id="survey" name="survey">
+                    <div class="input-field">
+                        <h6>Do you have a yard for your new dog?</h6>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input class="with-gap" name="yard" type="radio" value="true" checked />
+                            <span>Yes</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="yard" type="radio" value="false" />
+                            <span>No</span>
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <h6>Do you have any other pets?</h6>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input class="with-gap" name="otherPets" type="radio" value="true" checked />
+                            <span>Yes</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="otherPets" type="radio" value="false" />
+                            <span>No</span>
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <h6>Do you have any kids that will be interacting with your dog?</h6>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input class="with-gap" name="kids" type="radio" value="true" checked />
+                            <span>Yes</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="kids" type="radio" value="false" />
+                            <span>No</span>
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <h6>What size dog are you interested in?</h6>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input class="with-gap" name="size" type="radio" value="1" checked />
+                            <span>20 lbs or less</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="size" type="radio" value="2" />
+                            <span>30 - 60 lbs</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="size" type="radio" value="3" />
+                            <span>60 lbs or more</span>
+                        </label>
+                        <div class="input-field">
+                            <h6>Are you looking for a dog that's male or female?</h6>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input class="with-gap" name="sex" type="radio" value="false" checked />
+                                <span>Male</span>
+                            </label>
+
+                            <label>
+                                <input class="with-gap" name="sex" type="radio" value="true" />
+                                <span>Female</span>
+                            </label>
+                        </div>
+                        <br>
+                        <input class="btn purple" type="Submit" value="Submit" id="surveySubmit">
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="/js/html.js"></script>
+</body>

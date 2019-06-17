@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Organization Finder</title>
+</head>
+
+<body>
+    <br>
+    <h1>Organization Finder</h1>
+    <br>
+    <form>
+        <label for="zip-field">Zip Code:</label>
+        <input type="text" id="zip-field" placeholder="Enter your zip code">
+        <button type="submit" id="submitBtn">API Button</button>
+    </form>
+
+</body>
+<script type="text/javascript">
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        var userZip = $("#zip-field").val();
+        var userQuery = {
+            zipcode: userZip
+        }
+        if (userZip.length < 5 || userZip.length > 5) {
+            alert("Please enter a valid zip code");
+        } else {
+            $.post("/organizations", userQuery)
+            .then(function(data) {
+                console.log(data);
+            });
+        };
+    })
+</script>
+
+</html>

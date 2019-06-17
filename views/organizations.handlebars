@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" />
+    <link href="/styles/style.css" rel="stylesheet">
+    <title>Organization Finder</title>
+</head>
+
+<body>
+      <div class="header-survey">
+        <div class="container">
+            <div class="row">
+                <h3>Organization Finder</h3>
+            </div>
+        </div>
+    </div>
+
+  <div class="container" style="margin-top: 6em">
+<div class="row">
+    <div class="col4">
+<form>
+        <label for="zip-field"><h5>Zip Code:</h5></label>
+        <input type="text" id="zip-field" placeholder="Enter your zip code">
+        <br>
+        <button type="submit" id="submitBtn" class="btn purple">API Button</button>
+    </form>
+    </div>
+</div>
+
+
+
+
+  </div>
+    
+
+</body>
+<script type="text/javascript">
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        var userZip = $("#zip-field").val();
+        var userQuery = {
+            zipcode: userZip
+        }
+        if (userZip.length < 5 || userZip.length > 5) {
+            alert("Please enter a valid zip code");
+        } else {
+            $.post("/organizations", userQuery)
+            .then(function(data) {
+                console.log(data);
+            });
+        };
+    })
+</script>
+
+</html>
