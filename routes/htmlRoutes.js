@@ -17,7 +17,7 @@ module.exports = function (app) {
     res.send("The User Profile Page")
   })
 
-  // Now using Handlebars for this route
+  // Now using Handlebars for this
   app.get("/survey", function (req, res) {
     res.render('survey');
   })

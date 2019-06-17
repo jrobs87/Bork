@@ -1,7 +1,7 @@
 body {
-    text-align: center;
     padding-top: 3em;
-    transition: .33s;
+    transition: 1s;
+    opacity: 0;
 }
 
 #tinderslide {

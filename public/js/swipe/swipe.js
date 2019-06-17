@@ -87,6 +87,11 @@ $(document).ready(function () {
         $('body').css('opacity', '0');
         setTimeout(function () {
             location.reload();
-        }, 600)
-    })
+        }, 1200)
+    });
+
+    setTimeout(function() {
+        $('body').css("opacity", '1')
+    },100)
+  
 });

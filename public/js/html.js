@@ -12,11 +12,19 @@ $(document).ready(function () {
             // console.log(survey[i])
             var radioValue = $(`input[name='${survey[i]}']:checked`).val();
             if (radioValue) {
-                console.log(`${survey[i]} = ` + radioValue);
                 surveyAns.push(radioValue);
             }
         }
+        console.log(`User input: [${surveyAns}]`);
+        console.log('Data ready to send.');
+    });
 
+// Confirm and Send data
+    $('#confirm').on('click', function (data) {
+
+        event.preventDefault()
+
+        // AJAX call here
         data = {
             yard: surveyAns[0],
             otherPets: surveyAns[1],
@@ -25,11 +33,23 @@ $(document).ready(function () {
             sex: surveyAns[4]
         }
 
-        // AJAX call here
-
-        console.log(data);
+        url = '/api/survey';
+        $.ajax({
+            'url': url,
+            'type': 'POST',
+            'data': data,
+            'success': function () {
+                console.log('User Data sent to App');
+                alert('Sweet!');
+                window.open('/swiper',"_self"); // This can probably be handled server-side with response
+            },
+            'error': function (request, error) {
+                alert("Request: " + JSON.stringify(request));
+            }
+        });
     });
 });
+
 
 
 //this js file saves all information to be rooted to other relevant servers
