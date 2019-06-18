@@ -22,11 +22,30 @@ module.exports = function (app) {
     res.render('survey');
   })
 
+  // API Route for Survey Data
+  app.post("/api/survey", function (req, res) {
+    console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+    console.log('User Data Received.  Survey responses below...')
+
+    console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+    console.log(req.body)
+
+    // MARSHALL + DAVID - comparison logic here!
+
+    res.send('User Data succesfully received!'); // Ideally we would redirect to /swiper but would be rendered like html - solved client side for now.
+  });
+
   // Route to Swiper Page (Functioning!)
   app.get("/swiper", function (req, res) {
-    db.swipe.findAll({}).then(function (dbswipe) {
+    db.swipe.findAll({
+      where: {
+        yard: 0,
+        other_pets: 0,
+        female:1
+      }
+    }).then(function (dbswipe) {
       hbsObject = dbswipe;
-      console.log(hbsObject);
+      // console.log(hbsObject);
       res.render('swipe', hbsObject);
       console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
       console.log(`Swiper Page delivered to client with ${dbswipe.length} dog cards.`);

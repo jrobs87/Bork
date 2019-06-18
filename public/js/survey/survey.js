@@ -3,7 +3,7 @@ $(document).ready(function () {
     let surveyAns = [];
     let data = {};
 
-    $("#surveySubmit").click(function () {
+    $("#surveySubmit").on('click', function () {
 
         event.preventDefault()
 
