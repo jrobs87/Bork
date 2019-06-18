@@ -40,7 +40,6 @@ $(document).ready(function () {
             'data': data,
             'success': function () {
                 console.log('User Data sent to App');
-                alert('Sweet!');
                 window.open('/swiper',"_self"); // This can probably be handled server-side with response
             },
             'error': function (request, error) {

@@ -3,13 +3,7 @@ $(document).ready(function () {
     // init Materialize js 
     $('.modal').modal(
         { dismissible: false }
-    ); // modal for dog matches
-
-    // // Modal Instance
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var elems = document.querySelectorAll('.modal');
-    //     var modal = M.Modal.init(elems, {dismissible: false});
-    //   });
+    ); 
 
     console.log("Swiper ready!");
 
