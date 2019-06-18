@@ -72,6 +72,34 @@ input[type="radio"]:last-child {
 } */
 
 
+.card-div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: purple;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 20px;
+}
+
+.name-div {
+    background: purple;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 25px;
+}
+.city-div {
+    margin-right: 5px;
+}
+.state-div {
+    margin-right: 5px;
+}
+.loc-row{
+    margin-bottom: -5px;
+}
+
 .header-survey {
     background: darkmagenta;
     color:white;
