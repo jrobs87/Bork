@@ -1,6 +1,6 @@
 body {
     /* padding-top: 3em; */
-    transition: .33s;
+    /* transition: .33s; */
     opacity: 1;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .actions {
-    margin-top: 4%;
+    /* margin-top: 3%; */
     height: 6em;
     width: 100%;
 }

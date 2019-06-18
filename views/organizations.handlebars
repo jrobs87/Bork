@@ -7,36 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery.js"></script>
-     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-     <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" />
     <link href="/styles/style.css" rel="stylesheet">
     <title>Organization Finder</title>
 </head>
 
 <body class="light-bg">
-      <div class="header-survey" style="margin-top: 14%">
+    <div class="header-survey" style="margin-top: 14%">
         <div class="container">
             <div class="row">
                 <h3>Organization Finder</h3>
+                <h5>Search for local adoption agencies using your zipcode.</h5>
             </div>
         </div>
     </div>
 
-  <div class="container" style="margin-top: 6em">
-<div class="row">
-    <div class="col4">
-<form>
-        <label for="zip-field"><h5>Zip Code:</h5></label>
-        <input type="text" id="zip-field" placeholder="Enter your zip code">
-        <br>
-        <button type="submit" id="submitBtn" class="btn deep-purple">API Button</button>
-    </form>
+    <div class="container" style="margin-top: 2em">
+        <div class="row">
+            <div class="col l4">
+                <form>
+                    {{!-- <label for="zip-field"><h6>Zip Code:</h6></label> --}}
+                    <input type="text" id="zip-field" placeholder="Enter your zip code">
+                    <br>
+                    <button type="submit" id="submitBtn" class="btn deep-purple" style="margin-top: 1em">API
+                        Button</button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-  </div>
-    
-</body>
 
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4 class="qs">Oh heck!</h4>
+            <h5>Zipcode required to search for adoption organizations.</h5>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+     <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4 class="qs">Adoption Organizations</h4>
+            <h56>Check out these other great organizations!</h5>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript">
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
@@ -45,14 +69,18 @@
             zipcode: userZip
         }
         if (userZip.length < 5 || userZip.length > 5) {
-            alert("Please enter a valid zip code");
+            $('#modal1').modal('open'); // display matches modal
         } else {
             $.post("/organizations", userQuery)
-            .then(function(data) {
-                console.log(data);
-            });
+                .then(function (data) {
+                    console.log(data);
+                    $('#modal2').modal('open'); // display matches modal
+                });
         };
     })
+
+
+    $('.modal').modal();
 </script>
 
 </html>

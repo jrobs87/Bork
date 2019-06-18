@@ -2,6 +2,7 @@ body {
     background-image: url(../../img/home.jpg);
     background-size: cover;
     background-position-x: left;
+    background-position-y: top;
     height: 100vh;
 }
 
