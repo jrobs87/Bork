@@ -17,6 +17,7 @@ $(document).ready(function () {
         }
         console.log(`User input: [${surveyAns}]`);
         console.log('Data ready to send.');
+
     });
 
 // Confirm and Send data
