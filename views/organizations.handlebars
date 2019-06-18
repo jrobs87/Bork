@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" />
     <link href="/styles/style.css" rel="stylesheet">
-     <link href="/styles/adoption/adoption.css" rel="stylesheet">
+    <link href="/styles/adoption/adoption.css" rel="stylesheet">
     <title>Organization Finder</title>
 </head>
 
@@ -20,7 +20,7 @@
             <div class="row">
                 <h3>Organization Finder</h3>
                 <h5>Search for local adoption agencies using your zipcode.</h5>
-                
+
             </div>
         </div>
     </div>
@@ -32,8 +32,8 @@
                     {{!-- <label for="zip-field"><h6>Zip Code:</h6></label> --}}
                     <input type="text" id="zip-field" placeholder="Enter your zip code">
                     <br>
-                    <button type="submit" id="submitBtn" class="btn deep-purple" style="margin-top: 1em">Search 
-                        </button>
+                    <button type="submit" id="submitBtn" class="btn deep-purple" style="margin-top: 1em">Search
+                    </button>
                 </form>
             </div>
         </div>
@@ -50,11 +50,12 @@
         </div>
     </div>
 
-     <!-- Modal Structure -->
+    <!-- Modal Structure -->
     <div id="modal2" class="modal">
         <div class="modal-content">
             <h4 class="qs">Adoption Organizations</h4>
             <h56>Check out these other great organizations!</h5>
+                <div class="row" id="orgDiv"></div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
@@ -75,12 +76,51 @@
         } else {
             $.post("/organizations", userQuery)
                 .then(function (data) {
+                    debugger;
                     console.log(data);
+                    var orgDiv = $("<div>");
+                    orgDiv.attr("id", "org-div");
+                    $("#orgDiv").append(orgDiv);
+                    for (var z = 0; z < data.length; z++) {
+                        var orgCard = $("<div>");
+                        orgCard.attr("class", z + "-card card-div");
+                        $("#org-div").append(orgCard);
+                        var nameDiv = $("<div>");
+                        nameDiv.attr("class", z + "-name name-div");
+                        $("." + z + "-card").append(nameDiv);
+                        $("." + z + "-name").html(data[z].name)
+                        var locDiv = $("<div>");
+                        locDiv.attr("class", z + "-location loc-row row");
+                        $("." + z + "-card").append(locDiv);
+                        var cityDiv = $("<div>");
+                        cityDiv.attr("class", z + "-city city-div");
+                        $("." + z + "-location").append(cityDiv);
+                        $("." + z + "-city").html(data[z].address.city + ", ")
+                        var stateDiv = $("<div>");
+                        stateDiv.attr("class", z + "-state state-div");
+                        $("." + z + "-location").append(stateDiv);
+                        $("." + z + "-state").html(data[z].address.state)
+                        var zipDiv = $("<div>");
+                        zipDiv.attr("class", z + "-zip zip-div");
+                        $("." + z + "-location").append(zipDiv);
+                        $("." + z + "-zip").html(data[z].address.postcode)
+                        var emailDiv = $("<div>");
+                        emailDiv.attr("class", z + "-email email-div");
+                        $("." + z + "-card").append(emailDiv);
+                        $("." + z + "-email").html(data[z].email)
+                        var urlDiv = $("<div>");
+                        urlDiv.attr("class", z + "-url url-div");
+                        $("." + z + "-card").append(urlDiv);
+                        var urlLink = $("<a>");
+                        urlLink.attr("class", z + "-link url-link");
+                        urlLink.attr("href", data[z].url);
+                        $("." + z + "-url").append(urlLink);
+                        $("." + z + "-link").html("Check out their profile here!");
+                    };
                     $('#modal2').modal('open'); // display matches modal
                 });
-        };
-    })
-
+        }
+    });
 
     $('.modal').modal();
 </script>
