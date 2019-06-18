@@ -41,29 +41,35 @@
     </div>
 
     <div class="row">
-            <div class="actions">
-                <span class="dislike">
-                    <a class="btn-floating btn-large waves-effect waves-light deep-purple lighten-2 white-text"
-                        style="margin: 1em 2em 1em 0em;"><i class="fas fa-times"></i></a>
-                </span>
-                <span class="like">
-                    <a class="btn-floating btn-large waves-effect waves-light deep-purple pulse white-text"
-                        style="margin: 1em 0em 1em 2em;"><i class="fas fa-heart"></i></a>
-                </span>
-            </div>
+        <div class="actions">
+            <span class="dislike">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple lighten-2 white-text"
+                    style="margin: 1em 2em 1em 0em;"><i class="fas fa-times"></i></a>
+            </span>
+            <span class="like">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple pulse white-text"
+                    style="margin: 1em 0em 1em 2em;"><i class="fas fa-heart"></i></a>
+            </span>
+        </div>
     </div>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4 class="qs">We think these dogs are a great match for you!</h4>
+            <h5>Click a dog name to visit their adoption profile.</h5>
+            <br>
             <div id="matches">
-                < matches here>
+                <ul class="collection">
+                    {{!-- dog matches here --}}
+                </ul>
             </div>
         </div>
         <div class="modal-footer deep-purple darken-3">
-            <a href="#!" class="modal-close waves-effect waves-light btn-flat white-text" id="swipeRestart">Swipe Again</a>
-             <a href="/organizations" class="modal-close waves-effect waves-light btn-flat white-text">Adoption Resources</a>
+            <a href="#!" class="modal-close waves-effect waves-light btn-flat white-text" id="swipeRestart">Swipe
+                Again</a>
+            <a href="/organizations" class="modal-close waves-effect waves-light btn-flat white-text">Adoption
+                Resources</a>
         </div>
     </div>
 
@@ -80,6 +86,12 @@
     <script type="text/javascript" src="/js/swipe/jquery.jTinder.js"></script>
     <!-- jTinder initialization and swiper script -->
     <script src="js/swipe/swipe.js"></script>
+
+  <script>
+        $(document).ready(function() {
+            console.log('Testing Function Template')
+    })
+  </script>
 
 </body>
 

@@ -51,8 +51,8 @@ body {
 }
 
 .actions {
-    /* margin-top: 3%; */
-    height: 6em;
+    padding-top: 1em;
+    height: 7em;
     width: 100%;
 }
 
@@ -72,3 +72,21 @@ body {
     border-radius: 0.2em;
 }
 
+
+/* .modal {
+    width: 80%;
+    height: 90%
+ } */
+/* .collection-item {
+    height: 6em;
+} */
+
+.divText {
+    padding: 0.5em 0 0.5em 0;
+    font-size: 1.88em;
+    color: black;
+}
+
+.collection-img {
+    width: 20%;
+}
