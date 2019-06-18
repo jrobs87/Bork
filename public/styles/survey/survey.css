@@ -1,10 +1,10 @@
-/* body {
+body {
     background-image: url(../../img/survey.jpg);
     background-size: cover;
-    background-position-y: bottom;
+    background-position-y: center;
     background-position-x: left;
     height: 100vh;
-} */
+}
 
 #survey-container {
     margin-top: 3%;

@@ -1,7 +1,7 @@
 body {
     /* padding-top: 3em; */
-    transition: 1s;
-    opacity: 0;
+    transition: .33s;
+    opacity: 1;
 }
 
 #tinderslide {
@@ -30,8 +30,8 @@ body {
     width: 100%;
     height: 20em;
     border-radius: 0.3em;
-    background: #eaeaea;
-    color:black;
+    background: black;
+    color:#eaeaea;
     padding: 0.66em;
     /* border: 1px solid white; */
     margin-left: -0.2em;
@@ -68,7 +68,7 @@ body {
     color: white;
 } */
 
-/* #modal1 {
-    border-radius: 0.66em;
-} */
+#modal1 {
+    border-radius: 0.2em;
+}
 
