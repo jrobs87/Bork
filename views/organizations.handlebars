@@ -55,6 +55,7 @@
         <div class="modal-content">
             <h4 class="qs">Adoption Organizations</h4>
             <h56>Check out these other great organizations!</h5>
+            <br>
                 <div class="row" id="orgDiv"></div>
         </div>
         <div class="modal-footer">
@@ -76,8 +77,11 @@
         } else {
             $.post("/organizations", userQuery)
                 .then(function (data) {
+
                     debugger;
+
                     console.log(data);
+
                     var orgDiv = $("<div>");
                     orgDiv.attr("id", "org-div");
                     $("#orgDiv").append(orgDiv);
