@@ -64,10 +64,6 @@
                         nameDiv.attr("class", z+"-name name-div");
                         $("."+z+"-card").append(nameDiv);
                         $("."+z+"-name").html(data[z].name)
-                        var emailDiv = $("<div>");
-                        emailDiv.attr("class", z+"-email email-div");
-                        $("."+z+"-card").append(emailDiv);
-                        $("."+z+"-email").html(data[z].email)
                         var locDiv = $("<div>");
                         locDiv.attr("class", z+"-location loc-row row");
                         $("."+z+"-card").append(locDiv);
@@ -83,6 +79,10 @@
                         zipDiv.attr("class", z+"-zip zip-div");
                         $("."+z+"-location").append(zipDiv);
                         $("."+z+"-zip").html(data[z].address.postcode)
+                        var emailDiv = $("<div>");
+                        emailDiv.attr("class", z+"-email email-div");
+                        $("."+z+"-card").append(emailDiv);
+                        $("."+z+"-email").html(data[z].email)
                         var urlDiv = $("<div>");
                         urlDiv.attr("class", z+"-url url-div");
                         $("."+z+"-card").append(urlDiv);
