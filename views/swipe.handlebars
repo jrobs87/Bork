@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    {{!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
     <script src="https://kit.fontawesome.com/69a389f11e.js"></script>
     <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
     <link rel="stylesheet" href="/styles/swipe/jTinder.css" type="text/css" />
-    <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" />
+    {{!-- <link type="text/css" rel="stylesheet" href="/styles/materialize.min.css" media="screen,projection" /> --}}
     <link rel="stylesheet" href="/styles/swipe/swipe.css" type="text/css" />
-    <title>Swipe Your Paws!</title>
+    <title>Bork - Swipe</title>
 </head>
 
 <body>
     <div class="row">
         <div class="col l3 m1"></div>
-        <div class="col l6 m10 l12">
+        <div class="col l6 m10 s12">
             <div id="tinderslide">
                 <ul id="tinderList">
                     {{#each .}}
@@ -26,8 +26,7 @@
                         <div class="img"
                             style="background-image: url({{dataValues.dog_img}}); background-size: cover; background-position: center">
                         </div>
-
-                        <h5>{{dataValues.dog_name}}</h5>
+                        <h5 class="qs">{{dataValues.dog_name}}</h5>
                         <br>
                         <div class="like"></div>
                         <div class="dislike"></div>
@@ -42,7 +41,6 @@
     </div>
 
     <div class="row">
-       
             <div class="actions">
                 <span class="dislike">
                     <a class="btn-floating btn-large waves-effect waves-light deep-purple lighten-1 white-text"
@@ -53,17 +51,12 @@
                         style="margin: 1em 0em 1em 2em;"><i class="far fa-heart"></i></a>
                 </span>
             </div>
-
     </div>
-
-
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger red" style="position: fixed; z-index: 1; top: 2em; right: 2em" href="#modal1">Modal TEST</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>My Matches</h4>
+            <h4 class="qs">We think these dogs are a great match for you!</h4>
             <div id="matches">
                 < matches here>
             </div>
@@ -80,7 +73,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="/js/swipe/jquery.min.js"></script>
     <!-- transform2d lib -->
-    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    {{!-- <script type="text/javascript" src="/js/materialize.min.js"></script> --}}
     <!-- jQuery lib -->
     <script type="text/javascript" src="/js/swipe/jquery.transform2d.js"></script>
     <!-- jTinder lib -->

@@ -6,7 +6,7 @@ var axios = require("axios")
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    res.send("The Home Page");
+    res.render('home');
   });
 
   app.get("/login", function (req, res) {
