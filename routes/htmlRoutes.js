@@ -2,6 +2,7 @@ var db = require("../models");
 var path = require("path");
 var keys = require("../api/keys");
 var axios = require("axios")
+// var data = require("../public/js/html")
 
 module.exports = function (app) {
   // Load index page
@@ -24,7 +25,12 @@ module.exports = function (app) {
 
   // Route to Swiper Page (Functioning!)
   app.get("/swiper", function (req, res) {
-    db.swipe.findAll({}).then(function (dbswipe) {
+    db.swipe.findAll({
+      where:
+      {yard: 0,
+        other_pets: 0,
+      female: 1}
+    }).then(function (dbswipe) {
       hbsObject = dbswipe;
       console.log(hbsObject);
       res.render('swipe', hbsObject);

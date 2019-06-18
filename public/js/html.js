@@ -33,6 +33,8 @@ $(document).ready(function () {
             sex: surveyAns[4]
         }
 
+        module.exports = data;
+
         url = '/api/survey';
         $.ajax({
             'url': url,
