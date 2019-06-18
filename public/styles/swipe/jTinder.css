@@ -38,7 +38,7 @@ body {
     top: 0;
     z-index: 2;
     left: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .10);
     overflow: hidden;
     text-align: center;
     padding: 10px 10px 10px 10px;
