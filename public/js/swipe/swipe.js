@@ -3,18 +3,46 @@ $(document).ready(function () {
     // init Materialize js 
     $('.modal').modal(
         { dismissible: false }
-    ); // modal for dog matches
-
-    // // Modal Instance
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var elems = document.querySelectorAll('.modal');
-    //     var modal = M.Modal.init(elems, {dismissible: false});
-    //   });
+    ); 
 
     console.log("Swiper ready!");
 
     // set up the liked dogs array card counter
-    let dogsLiked = []
+    let dogsLiked = [];
+
+    function dogCollection(dogs) {
+        for (i = 0; i < dogs.length; i++) {
+            let li = $('<li>');
+            let name = dogs[i].dog_name;
+            let img = dogs[i].dog_img;
+            let url = dogs[i].dog_url;
+    
+            // let imgDiv = $('<img>');
+            let a = $('<a>');
+            let divText = $('<div>')
+
+            li.addClass('collection-item')
+
+            // imgDiv.attr('src', img);
+            // imgDiv.addClass('collection-img')
+
+            // a.text(name);
+            a.attr('href', url);
+            a.attr('target', 'blank');
+
+            divText.text(name);
+            divText.addClass('divText');
+            divText.addClass('qs');
+
+            // $(li).append(imgDiv);
+            $(a).append(divText);
+            $(li).append(a);
+            $('.collection').append(li);
+
+            console.log(name)
+
+        }
+    }
 
     cardCount = document.getElementById("tinderList").childElementCount;
     console.log(`Card Stack loaded.  Total card count: ${cardCount}`);
@@ -26,9 +54,10 @@ $(document).ready(function () {
 
         // Display modal, send POST request with ShortList, button or redirect to ShortList Page
         if (cardCount === 0) {
-            console.log('Cards depleted!  Show results and send to server');
+            console.log('Cards depleted!  Show results and send to server.');
             console.log(dogsLiked);
             $('#modal1').modal('open'); // display matches modal
+            dogCollection(dogsLiked);
         }
     }
 
@@ -63,7 +92,7 @@ $(document).ready(function () {
 
             dogsLikedAdd(dogID, dogName, dogIMG, dogURL);
             cardCounter();
-            console.log(dogID)
+            // console.log(dogID)
 
             // console.log('Like image ' + (item.index() + 1));
             // console.log(`Liked ${dogName} - ID ${dogID}`);
@@ -87,11 +116,7 @@ $(document).ready(function () {
         $('body').css('opacity', '0');
         setTimeout(function () {
             location.reload();
-        }, 1200)
+        }, 400)
     });
 
-    setTimeout(function() {
-        $('body').css("opacity", '1')
-    },100)
-  
 });

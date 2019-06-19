@@ -1,0 +1,7 @@
+body {
+    background-image: url(../../img/adoption.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: left;
+    height: 100vh;
+}

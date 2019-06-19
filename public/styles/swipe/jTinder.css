@@ -17,7 +17,7 @@ body {
 
 #tinderslide {
     position: relative;
-    background: #fff;
+    /* background: #fff; */
     width: 95%;
     height: 100%;
 }
@@ -38,16 +38,16 @@ body {
     top: 0;
     z-index: 2;
     left: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .10);
     overflow: hidden;
     text-align: center;
     padding: 10px 10px 10px 10px;
-    background: #eee;
+    /* background: #eee; */
     font-size: 24px;
     color: #000;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff;
     border: 1px solid #dfdfdf;
-    border: 1px solid rgba(96, 96, 96, 0.2);
+    border: 1px solid rgba(96, 96, 96, 0.2); */
     -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
     -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
     -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
@@ -159,31 +159,31 @@ body {
     background: url("../img/like_button.png") no-repeat scroll center center;
 } */
 
-.actions a {
-    /* float: left;
-    display: block; */
-    /* background-color: #f7f7f7;
+/* .actions a {
+    float: left;
+    display: block;
+    background-color: #f7f7f7;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
     background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
     background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
     background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
-    background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); */
-    /* color: #a7a7a7; */
-    /* margin: 36px;
+    background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+    color: #a7a7a7;
+    margin: 36px;
     width: 80px;
-    height: 80px; */
-    /* position: relative;
+    height: 80px; 
+    position: relative;
     text-align: center;
-    line-height: 144px; */
-    /* border-radius: 50%; */
-    /* outline: none;
-    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff; */
-}
+    line-height: 144px;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+} */
 
 .actions a:hover{
   text-decoration: none;
   /* color: #555; */
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
 }
 
 /* jTinder images */

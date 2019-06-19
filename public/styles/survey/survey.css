@@ -1,0 +1,23 @@
+body {
+    background-image: url(../../img/survey.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: left;
+    height: 100vh;
+}
+
+#survey-container {
+    margin-top: 3%;
+}
+
+[type="radio"]:checked+span:before, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #5c33ae;
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color: #5c33ae;
+}
+
+label {
+    margin-right: 2em;
+}

@@ -2,41 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="/styles/style.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <title>Pet Survey</title>
+   
+    <link href="/styles/survey/survey.css" rel="stylesheet">
+    <title>Bork - Survey</title>
 </head>
 
 <body>
-    <div class="header-survey">
-        <div class="container">
-            <div class="row">
-                <h3>Adoption Survey</h3>
+
+    <div class="container3 container" id="survey-container">
+        <div class="row" >
+            <div class="col l6 s12" style="padding-top: 6em; border-bottom: 1px solid black; padding: 3em 0 1em 0">
+            <h3 style="margin-right: 3em">Welcome to Bork</h3>
+            <h5>Some basic info helps us match dogs with their new homes.</h5>
             </div>
         </div>
-    </div>
 
-    <div class="container3 container">
-        <div class="row" style="padding-top: 6em; border-bottom: 1px solid lightgrey; padding: 3em 0 1em 0">
-            <h5 style="margin-right: 3em">Welcome to AppName!</h5>
-            <h6>Some basic info helps us match your future dog with a compatible forever home.</h6>
-        </div>
         <div class="row">
+            <div class="col 12">
             <div class="survey">
                 <form action="" id="survey" name="survey">
                     <div class="input-field">
@@ -104,27 +86,29 @@
                         </div>
                         <div class="radio">
                             <label>
-                                <input class="with-gap" name="sex" type="radio" value="false" checked />
+                                <input class="with-gap" name="female" type="radio" value="false" checked />
                                 <span>Male</span>
                             </label>
 
                             <label>
-                                <input class="with-gap" name="sex" type="radio" value="true" />
+                                <input class="with-gap" name="female" type="radio" value="true" />
                                 <span>Female</span>
                             </label>
                         </div>
                         <br>
-                        <input class="btn purple" type="Submit" value="Submit" id="surveySubmit">
-                        <button class="btn red" id="confirm">
-                            Confirm Data and Send
-                        </button>
+                        <input style="margin-top: 1em" class="btn deep-purple modal-trigger" href="#modal1" type="Submit" value="Submit" id="surveySubmit">
                 </form>
             </div>
-
         </div>
-
     </div>
 
-
-    <script type="text/javascript" src="/js/html.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/survey/survey.js"></script>
+  <script>
+      $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
 </body>
