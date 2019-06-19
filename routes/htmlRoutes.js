@@ -1,7 +1,9 @@
 var db = require("../models");
-var path = require("path");
+// var path = require("path");
 var keys = require("../api/keys");
 var axios = require("axios")
+
+let userData = {}
 
 module.exports = function (app) {
   // Load index page
@@ -28,10 +30,17 @@ module.exports = function (app) {
     console.log('User Data Received.  Survey responses below...')
 
     console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
-    console.log(req.body)
+    console.log(req.body);
 
-    // MARSHALL + DAVID - comparison logic here!
+    userData = {
+      yard: req.body.yard,
+      other_pets: req.body.other_pets,
+      kids: req.body.kids,
+      size: req.body.size,
+      female: req.body.female
+    }
 
+    console.log(`Sex is ${userData.female}`)
     res.send('User Data succesfully received!'); // Ideally we would redirect to /swiper but would be rendered like html - solved client side for now.
   });
 
@@ -39,9 +48,10 @@ module.exports = function (app) {
   app.get("/swiper", function (req, res) {
     db.swipe.findAll({
       where: {
-        yard: 0,
-        other_pets: 0,
-        female:1
+        // yard: userData.yard,
+        // other_pets: userData.other_pets,
+        // size: userData.size,
+        female: userData.female
       }
     }).then(function (dbswipe) {
       hbsObject = dbswipe;
@@ -52,36 +62,31 @@ module.exports = function (app) {
     });
   });
 
-  // JOHN - Using a modal instead for displaying results!
-  // app.get("/results", function (req, res) {
-  //   res.send("The results page")
-  // })
-
-  // API Routes to additional adoption orgs
+  // HTML Route - Adoption Organizations
   app.get("/organizations", function (req, res) {
     // res.sendFile(path.join(__dirname, "/../views/petfinder_organization.html")) // Original
     res.render('organizations');
 
   })
 
-   // API Routes to additional adoption orgs
+  // API Routes to additional adoption orgs
   app.post("/organizations", function (req, res) {
     var userZip = req.body.zipcode
     var token = keys
-     axios({
-       method: "POST",
-       url: "https://api.petfinder.com/v2/oauth2/token",
-       data: "grant_type=client_credentials&client_id=" + token.petfinder.id + "&client_secret=" + token.petfinder.secret,
-     }).then(function (response) {
-       var token = response.data.access_token
-        axios({
-          method: "GET",
-          url: "https://api.petfinder.com/v2/organizations?location="+userZip,
-          headers: { "Authorization": "Bearer " + token },
-        }).then(function (response) {
-        var organs =response.data.organizations
+    axios({
+      method: "POST",
+      url: "https://api.petfinder.com/v2/oauth2/token",
+      data: "grant_type=client_credentials&client_id=" + token.petfinder.id + "&client_secret=" + token.petfinder.secret,
+    }).then(function (response) {
+      var token = response.data.access_token
+      axios({
+        method: "GET",
+        url: "https://api.petfinder.com/v2/organizations?location=" + userZip,
+        headers: { "Authorization": "Bearer " + token },
+      }).then(function (response) {
+        var organs = response.data.organizations
         res.json(organs)
-        });
-     })
+      });
+    })
   })
 }

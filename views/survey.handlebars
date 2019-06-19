@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    {{!-- <link href="/styles/style.css" rel="stylesheet"> --}}
+   
     <link href="/styles/survey/survey.css" rel="stylesheet">
     <title>Bork - Survey</title>
 </head>
@@ -86,21 +86,29 @@
                         </div>
                         <div class="radio">
                             <label>
-                                <input class="with-gap" name="sex" type="radio" value="false" checked />
+                                <input class="with-gap" name="female" type="radio" value="false" checked />
                                 <span>Male</span>
                             </label>
 
                             <label>
-                                <input class="with-gap" name="sex" type="radio" value="true" />
+                                <input class="with-gap" name="female" type="radio" value="true" />
                                 <span>Female</span>
                             </label>
                         </div>
                         <br>
-                        <input style="margin-top: 1em" class="btn deep-purple modal-trigger" id="confirm"  type="Submit" value="Submit" id="surveySubmit">
+                        <input style="margin-top: 1em" class="btn deep-purple modal-trigger" href="#modal1" type="Submit" value="Submit" id="surveySubmit">
                 </form>
             </div>
         </div>
     </div>
 
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/js/survey/survey.js"></script>
+  <script>
+      $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
 </body>

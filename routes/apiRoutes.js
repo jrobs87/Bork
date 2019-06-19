@@ -15,18 +15,18 @@ module.exports = function (app) {
     });
   });
 
-  // API Route for Survey Data
-  app.post("/api/survey", function (req, res) {
-    console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
-    console.log('User Data Received.  Survey responses below...')
+  // // API Route for Survey Data
+  // app.post("/api/survey", function (req, res) {
+  //   console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+  //   console.log('User Data Received.  Survey responses below...')
 
-    console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
-    console.log(req.body)
+  //   console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+  //   console.log(req.body)
 
-    // MARSHALL + DAVID - comparison logic here!
+  //   // MARSHALL + DAVID - comparison logic here!
 
-    res.send('User Data succesfully received!'); // Ideally we would redirect to /swiper but would be rendered like html - solved client side for now.
-  });
+  //   res.send('User Data succesfully received!'); // Ideally we would redirect to /swiper but would be rendered like html - solved client side for now.
+  // });
 
 
   // Delete an example by id
