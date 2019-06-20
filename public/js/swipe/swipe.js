@@ -3,30 +3,24 @@ $(document).ready(function () {
     // init Materialize js 
     $('.modal').modal(
         { dismissible: false }
-    ); 
-
-    console.log("Swiper ready!");
+    );
 
     // set up the liked dogs array card counter
     let dogsLiked = [];
 
+    // populate dogs in modal after last card in stack is swiped
     function dogCollection(dogs) {
         for (i = 0; i < dogs.length; i++) {
-            let li = $('<li>');
+
+            let li = $('<li>'); // line items for modal
+            let a = $('<a>'); // text links for mmodal
+            let divText = $('<div>'); // holder for dog name embedded in a tag
+
             let name = dogs[i].dog_name;
-            let img = dogs[i].dog_img;
             let url = dogs[i].dog_url;
-    
-            // let imgDiv = $('<img>');
-            let a = $('<a>');
-            let divText = $('<div>')
 
             li.addClass('collection-item')
 
-            // imgDiv.attr('src', img);
-            // imgDiv.addClass('collection-img')
-
-            // a.text(name);
             a.attr('href', url);
             a.attr('target', 'blank');
 
@@ -34,55 +28,51 @@ $(document).ready(function () {
             divText.addClass('divText');
             divText.addClass('qs');
 
-            // $(li).append(imgDiv);
             $(a).append(divText);
             $(li).append(a);
             $('.collection').append(li);
-
-            console.log(name)
-
         }
+        console.log('Liked dogs rendered in modal')
     }
 
+    // get initial card count (refactor to jquery later)
     cardCount = document.getElementById("tinderList").childElementCount;
     console.log(`Card Stack loaded.  Total card count: ${cardCount}`);
 
+    // update card count
     function cardCounter() {
-        // reduces Card Count by 1 each time a card is swiped
-        cardCount -= 1;
+        cardCount -= 1;  // reduces Card Count by 1 each time a card is swiped
         console.log(`New card count: ${cardCount}`);
 
-        // Display modal, send POST request with ShortList, button or redirect to ShortList Page
+        // Display modal summarizing liked dogs
         if (cardCount === 0) {
-            console.log('Cards depleted!  Show results and send to server.');
-            console.log(dogsLiked);
+            dogCollection(dogsLiked); // loading dogs into modal before open (was located after modal open but caused weird animations)
             $('#modal1').modal('open'); // display matches modal
-            dogCollection(dogsLiked);
+
+            console.log('Cards depleted!  Show results and send to server.');
         }
     }
 
+    // Add dogs to array when liked
     function dogsLikedAdd(id, name, img, url) {
         let dogLikedAdd = {
             dog_id: id,
             dog_name: name,
             dog_img: img,
             dog_url: url
-        };
+        }
 
         dogsLiked.push(dogLikedAdd);
+
         console.log(dogsLiked);
         console.log(dogLikedAdd)
     }
 
     $("#tinderslide").jTinder({
         onDislike: function (item) {
-            let dogID = item.data("dog-id");
-            let dogName = item.data("dog-name");
 
+            // No action needed here - just logging dislike
             cardCounter();
-
-            // console.log('Dislike image ' + (item.index() + 1));
-            // console.log(`Disliked ${dogName} - ID ${dogID}`);
         },
         onLike: function (item) {
             let dogID = item.data("id");
@@ -91,11 +81,8 @@ $(document).ready(function () {
             let dogURL = item.data("url");
 
             dogsLikedAdd(dogID, dogName, dogIMG, dogURL);
-            cardCounter();
-            // console.log(dogID)
 
-            // console.log('Like image ' + (item.index() + 1));
-            // console.log(`Liked ${dogName} - ID ${dogID}`);
+            cardCounter();
         },
         // jTinder config
         animationRevertSpeed: 200,
@@ -108,15 +95,17 @@ $(document).ready(function () {
     // Set button action to trigger jTinder like & dislike.
     $('.actions .like, .actions .dislike').click(function (e) {
         e.preventDefault();
+
         $("#tinderslide").jTinder($(this).attr('class'));
     });
 
-    // Reload the swiper page from modal button
-    $('#swipeRestart').on('click', function () {
-        $('body').css('opacity', '0');
-        setTimeout(function () {
-            location.reload();
-        }, 400)
-    });
+    if ($('#tinderList').children().length === 0) {
+        $('.actions').css('display', 'none');
+        $('#tinderslide').text('Oh heck! No cards could be loaded. Return Home and click Get Started to try again.');
+        // $('#tinderslide').text('Error: Check server status, and dB connection, then restart from Home page.');
 
+        console.log('No cards loaded.');
+    } else {
+        console.log("Swipe page ready!");
+    }
 });
