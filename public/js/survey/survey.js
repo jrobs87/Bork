@@ -44,7 +44,7 @@ $(document).ready(function () {
                 window.open('/swiper', "_self"); // This can probably be handled server-side with response
             },
             'error': function (request, error) {
-                alert("Request: " + JSON.stringify(request));
+                console.log("Request: " + JSON.stringify(request));
             }
         })
     }

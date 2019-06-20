@@ -1,10 +1,10 @@
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand:700&display=swap" rel="stylesheet">
 
@@ -35,7 +35,7 @@
 					{{!-- <li><a href="/survey">Survey</a></li> --}}
 					{{!-- <li><a href="/swiper">Swipe</a></li> --}}
 					<li><a href="/organizations">Organizations</a></li>
-				<li><a href="https://github.com/jrobs87/project-2-reset" target="blank">GitHub</a></li>
+					<li><a href="https://github.com/jrobs87/project-2-reset" target="blank">GitHub</a></li>
 				</ul>
 			</div>
 		</div>
@@ -59,16 +59,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script>
 		$(window).ready(function () {
-			$('.sidenav').sidenav();
-			// Simple trnaistion between pages
-			$('#preLoader').css('opacity', 0);
+			$('.sidenav').sidenav(); // init mobile nav menu
 
+			$('#preLoader').css('opacity', 0); 	// Simple trnaistion between pages
+
+			// remove preloader after fading out
 			setTimeout(function () {
 				$('#preLoader').css('display', 'none');
 			}, 460);
 		});
-
 	</script>
+	
 </body>
 
 </html>
