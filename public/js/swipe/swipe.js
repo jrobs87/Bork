@@ -32,7 +32,6 @@ $(document).ready(function () {
             $(li).append(a);
             $('.collection').append(li);
         }
-        console.log('Liked dogs rendered in modal')
     }
 
     // get initial card count (refactor to jquery later)
@@ -49,7 +48,8 @@ $(document).ready(function () {
             dogCollection(dogsLiked); // loading dogs into modal before open (was located after modal open but caused weird animations)
             $('#modal1').modal('open'); // display matches modal
 
-            console.log('Cards depleted!  Show results and send to server.');
+            console.log('Cards depleted!');
+            console.log('Liked dogs rendered in modal')
         }
     }
 
@@ -63,16 +63,11 @@ $(document).ready(function () {
         }
 
         dogsLiked.push(dogLikedAdd);
-
-        console.log(dogsLiked);
-        console.log(dogLikedAdd)
     }
 
     $("#tinderslide").jTinder({
-        onDislike: function (item) {
-
-            // No action needed here - just logging dislike
-            cardCounter();
+        onDislike: function () {
+            cardCounter(); // No action needed here - just logging dislike
         },
         onLike: function (item) {
             let dogID = item.data("id");
@@ -102,7 +97,6 @@ $(document).ready(function () {
     if ($('#tinderList').children().length === 0) {
         $('.actions').css('display', 'none');
         $('#tinderslide').text('Oh heck! No cards could be loaded. Return Home and click Get Started to try again.');
-        // $('#tinderslide').text('Error: Check server status, and dB connection, then restart from Home page.');
 
         console.log('No cards loaded.');
     } else {
