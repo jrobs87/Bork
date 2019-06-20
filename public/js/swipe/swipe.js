@@ -112,11 +112,11 @@ $(document).ready(function () {
     });
 
     // Reload the swiper page from modal button
-    $('#swipeRestart').on('click', function () {
-        $('body').css('opacity', '0');
-        setTimeout(function () {
-            location.reload();
-        }, 400)
-    });
+    // $('#swipeRestart').on('click', function () {
+    //     $('body').css('opacity', '0');
+    //     setTimeout(function () {
+    //         location.reload();
+    //     }, 400)
+    // });
 
 });
