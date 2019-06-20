@@ -6,7 +6,7 @@ An app that helps users find the best possible matches for dogs to adopt based o
 
 ### **Getting Started:**
 
-Check out the deployed version here: "heroku url goes here"
+Check out the deployed version here: "https://serene-coast-29997.herokuapp.com/"
 
 ### **How to Use:**
 
@@ -28,7 +28,7 @@ Type into the command line "npm install" in order to download dependencies
 
 Change the congifuration properties in the config.json file to the settings you have for your mysql database
 
-Seed your database with the swipes_db_seed_test-demo.sql file in the db directory
+Seed your database with the schema.sql and seeds.sql files in the db directory (ignore db-dev - this is for backups and testing only)
 
 Add a folder titled "api" in the main directory of the app folder.
 
@@ -51,13 +51,15 @@ Next, open your browser at address: localhost:8080 to display the home page of t
 
 Log-in feature that allows for multiple users to have their queries saved and their information protected.
 
-ionic framework integration and hammer.js to build a better swipe feature, leveraging Templating engines, and making the app dynamically pull api data from multiple adoption agencies
+ionic framework integration and hammer.js to build a better swipe feature, leveraging Templating engines, animation library integration (anime.js), and making the app dynamically pull api data from multiple adoption agencies.  
 
-Css precompilers
+CSS precompilers (SASS)
 
 More APIs for a more thorough and extensive search of organizations and dogs.
 
 Multiple tables for extensive queries
+
+Live, frequently updated data
 
 ### **Built With:**
 
