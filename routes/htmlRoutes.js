@@ -1,5 +1,4 @@
 var db = require("../models");
-// var path = require("path");
 var keys = require("../api/keys");
 var axios = require("axios");
 
@@ -54,13 +53,10 @@ module.exports = function(app) {
       .findAll({
         where: {
           other_pets: userData.other_pets,
-          // yard: userData.yard,
-          // female: userData.female
         }
       })
       .then(function(dbswipe) {
         hbsObject = dbswipe;
-        // console.log(hbsObject);
         res.render("swipe", hbsObject);
         console.log(
           "----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- "
@@ -73,7 +69,6 @@ module.exports = function(app) {
 
   // HTML Route - Adoption Organizations
   app.get("/organizations", function(req, res) {
-    // res.sendFile(path.join(__dirname, "/../views/petfinder_organization.html")) // Original
     res.render("organizations");
   });
 
