@@ -76,7 +76,6 @@ module.exports = function(app) {
   // API Routes to additional adoption orgs
   app.post("/organizations", function(req, res) {
     var userZip = req.body.zipcode;
-    var token = keys;
     axios({
       method: "POST",
       url: "https://api.petfinder.com/v2/oauth2/token",
