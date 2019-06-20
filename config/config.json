@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "happymarmot",
+    "password": "password",
     "database": "pawnder_db",
     "host": "localhost",
     "dialect": "mysql"
