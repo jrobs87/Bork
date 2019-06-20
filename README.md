@@ -6,7 +6,7 @@ An app that helps users find the best possible matches for dogs to adopt based o
 
 ### **Getting Started:**
 
-Check out the deployed version here: "heroku url goes here"
+Check out the deployed version here: "https://serene-coast-29997.herokuapp.com/"
 
 ### **How to Use:**
 
