@@ -30,20 +30,16 @@ Change the congifuration properties in the config.json file to the settings you 
 
 Seed your database with the schema.sql and seeds.sql files in the db directory (ignore db-dev - this is for backups and testing only)
 
-Add a folder titled "api" in the main directory of the app folder.
-
-Inside your newly created api folder create a file named keys.js
+create a file named: .env in the main directory of the project folder.
 
 You will need to go to https://www.petfinder.com/developers/ and register to get your own key and secret.
 
-Type the following out inside the keys.js file:
+Type the following out inside the .env file:
 
-exports.petfinder = {
-  id: "your id goes here",
-  secret: "your secret goes here"
-}
+PETFINDER_ID="your id goes here"
+PETFINDER_SECRET="your secret goes here"
 
-Once that is all done, you can type out the command "nodemon server" in the terminal at the app's main directory.
+Once that is all done, you can type out the command "node server" in the terminal at the app's main directory.
 
 Next, open your browser at address: localhost:8080 to display the home page of the app.
 

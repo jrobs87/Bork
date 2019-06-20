@@ -1,6 +1,7 @@
 var db = require("../models");
-var keys = require("../api/keys");
 var axios = require("axios");
+require("dotenv").config();
+
 
 let userData = {};
 
@@ -81,9 +82,9 @@ module.exports = function(app) {
       url: "https://api.petfinder.com/v2/oauth2/token",
       data:
         "grant_type=client_credentials&client_id=" +
-        token.petfinder.id +
+        process.env.PETFINDER_ID +
         "&client_secret=" +
-        token.petfinder.secret
+        process.env.PETFINDER_SECRET
     }).then(function(response) {
       var token = response.data.access_token;
       axios({
