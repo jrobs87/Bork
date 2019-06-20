@@ -20,13 +20,15 @@ Users can also use their zip code to find local adoption organizations that have
 
 ### **Installation and Prerequisites:**
 
-If you want to download and install the app locally then clone the file:
+If you want to download and install the app locally then clone the repo:
 
-Once the file is cloned locally, in the terminal, navigate to the app's main file.
+Once the repo is cloned locally, in the terminal, navigate to the app's main file.
 
 Type into the command line "npm install" in order to download dependencies
 
-Change the password in the config.json file to the password you have for your mysql database
+Change the congifuration properties in the config.json file to the settings you have for your mysql database
+
+Seed your database with the swipes_db_seed_test-demo.sql file in the db directory
 
 Add a folder titled "api" in the main directory of the app folder.
 
@@ -49,7 +51,7 @@ Next, open your browser at address: localhost:8080 to display the home page of t
 
 Log-in feature that allows for multiple users to have their queries saved and their information protected.
 
-Animation library integration and hammer.js to build a better swipe feature, leveraging Templating engines, and making the app dynamically pull api data from multiple adoption agencies
+ionic framework integration and hammer.js to build a better swipe feature, leveraging Templating engines, and making the app dynamically pull api data from multiple adoption agencies
 
 Css precompilers
 
