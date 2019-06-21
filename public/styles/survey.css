@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-position-y: center;
     background-position-x: left;
-    height: 100vh;
+    min-height: 900px;
 }
 
 #survey-container {
