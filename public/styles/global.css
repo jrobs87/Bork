@@ -4,7 +4,8 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    min-height: 900;
+    /* min-height: 900; */
+    height: 100vh;
 }
 
 h1, h2, h3, .qs {
@@ -23,8 +24,8 @@ h1, h2, h3, .qs {
     /* color: #eaeaea; */
     position: fixed;
     top: 0;
-    z-index: 100000000;
-    transition-duration: .33s;
+    z-index: 1000;
+    transition-duration: .66s;
     transition-delay: .11s;
 }
 
@@ -46,3 +47,7 @@ h1, h2, h3, .qs {
     border-radius: 30px;
 }
 
+.loader-text {
+    transition-duration: 0.33s;
+    font-size: 3em;
+}
