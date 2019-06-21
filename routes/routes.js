@@ -97,7 +97,7 @@ module.exports = function(app) {
     });
   });
 
-  // SWIPER API ROUTE TESTING
+  // SWIPE API ROUTE TESTING
   app.get("/api/swiper", function (req, res) {
     db.swipe.findAll({}).then(function (dbswipe) {
       res.send(dbswipe);
