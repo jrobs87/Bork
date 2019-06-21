@@ -1,0 +1,15 @@
+body {
+    background-image: url(../img/404.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    color: white;
+    /* height: 90vh; */
+}
+
+#four-o-four {
+    padding-top: 18%;
+    text-align: center;
+    width: 100%;
+}
+

@@ -16,9 +16,8 @@ app.engine("handlebars",
 );
 app.set("view engine", "handlebars");
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// Routes (cosolidated on 2019 06.21 - John)
+require("./routes/routes")(app);
 
 app.listen(PORT, function () {
   console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')

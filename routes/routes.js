@@ -1,6 +1,7 @@
 var db = require("../models");
-var keys = require("../api/keys");
 var axios = require("axios");
+require("dotenv").config();
+
 
 let userData = {};
 
@@ -75,15 +76,14 @@ module.exports = function(app) {
   // API Routes to additional adoption orgs
   app.post("/organizations", function(req, res) {
     var userZip = req.body.zipcode;
-    var token = keys;
     axios({
       method: "POST",
       url: "https://api.petfinder.com/v2/oauth2/token",
       data:
         "grant_type=client_credentials&client_id=" +
-        token.petfinder.id +
+        process.env.PETFINDER_ID +
         "&client_secret=" +
-        token.petfinder.secret
+        process.env.PETFINDER_SECRET
     }).then(function(response) {
       var token = response.data.access_token;
       axios({
@@ -96,4 +96,24 @@ module.exports = function(app) {
       });
     });
   });
+
+  // SWIPE API ROUTE TESTING
+  app.get("/api/swiper", function (req, res) {
+    db.swipe.findAll({}).then(function (dbswipe) {
+      res.send(dbswipe);
+
+      console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+      console.log(`Dog Swiper API delivered with ${dbswipe.length} dog cards.  All matches below!`);
+
+      // Log out all dog matches.
+      for (i = 0; i < dbswipe.length; i++) {
+        console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
+        console.log(dbswipe[i].dataValues)
+      }
+    });
+  });
+
+  app.get("*", function(req, res) {
+    res.render("404")
+  })
 };
