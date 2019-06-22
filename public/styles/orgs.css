@@ -1,0 +1,28 @@
+body {
+    background-image: url(../../img/adoption.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: left;
+    height: 100vh;
+}
+
+.email-div {
+    font-family: 'Quicksand', sans-serif;
+    color: #5f41b0;
+}
+
+.name-div {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.33em;
+}
+
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+
+     /* label focus color */
+     .input-field input[type=text]:focus + label {
+        color: #000;
+      }

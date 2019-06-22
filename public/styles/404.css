@@ -1,0 +1,25 @@
+body {
+    background-image: url(../img/404.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+#four-o-four {
+    height: 100vh;
+    padding-top: 20%;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+/* Box frame to implement possibly */
+/* #box {
+    border: 2px solid white;
+    border-radius: 2em;
+    width: 33%;
+    margin: auto;
+    height: 44%;
+    margin-top: 10%; 
+    padding: 10% 0 16% 0;
+} */

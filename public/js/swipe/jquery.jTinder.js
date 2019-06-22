@@ -12,9 +12,9 @@
 		defaults = {
 			onDislike: null,
 			onLike: null,
-			animationRevertSpeed: 200,
+			animationRevertSpeed: 2000,
 			animationSpeed: 400,
-			threshold: 1,
+			threshold: 2,
 			likeSelector: '.like',
 			dislikeSelector: '.dislike'
 		};

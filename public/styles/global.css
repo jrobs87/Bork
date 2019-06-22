@@ -4,11 +4,16 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    min-height: 900;
+    /* min-height: 900; */
+    height: 100vh;
 }
 
 h1, h2, h3, .qs {
     font-family: 'Quicksand', sans-serif;
+}
+
+h5 {
+    font-size: 1.50em;
 }
 
 .light-bg {
@@ -20,11 +25,10 @@ h1, h2, h3, .qs {
     height: 100vh;
     text-align: center;
     background: #eaeaea;
-    /* color: #eaeaea; */
     position: fixed;
     top: 0;
-    z-index: 100000000;
-    transition-duration: .33s;
+    z-index: 1000;
+    transition-duration: .66s;
     transition-delay: .11s;
 }
 
@@ -44,5 +48,10 @@ h1, h2, h3, .qs {
 
 .btn {
     border-radius: 30px;
+    letter-spacing: 1px;
 }
 
+.loader-text {
+    transition-duration: 0.33s;
+    font-size: 3em;
+}
