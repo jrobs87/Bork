@@ -1,20 +1,17 @@
 body {
-    /* padding-top: 3em; */
-    /* transition: .33s; */
     opacity: 1;
+    min-height: 1160px;
 }
 
 #tinderslide {
     height: 28em;
     width: 100%;
     margin: 8% auto;
-    /* padding-top: 1em; */
     height: 30em;
     width: 26em;
 }
 
 #tinderList {
- /* background: blue; */
  width: 100%;
 }
 
@@ -33,7 +30,6 @@ body {
     background: black;
     color:#eaeaea;
     padding: 0.66em;
-    /* border: 1px solid white; */
     margin-left: -0.2em;
 }
 
@@ -41,7 +37,6 @@ body {
     height: 16em;
     width: 100%;
     border-radius: 0.2em;
-    /* border: 1px solid white; */
 }
 
 /* Like & dislike badge images */
@@ -57,29 +52,12 @@ body {
 }
 
 .actions a {
-   /* background: purple;
-   color: white; */
    transition: 0.3s;
-   /* margin: 1em 2em 1em 2em; */
 }
-
-/* .actions a:hover{
-    background: plum;
-    color: white;
-} */
 
 #modal1 {
     border-radius: 0.2em;
 }
-
-
-/* .modal {
-    width: 80%;
-    height: 90%
- } */
-/* .collection-item {
-    height: 6em;
-} */
 
 .divText {
     padding: 0.5em 0 0.5em 0;

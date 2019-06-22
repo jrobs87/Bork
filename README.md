@@ -47,7 +47,7 @@ Next, open your browser at address: localhost:8080 to display the home page of t
 
 Log-in feature that allows for multiple users to have their queries saved and their information protected.
 
-ionic framework integration and hammer.js to build a better swipe feature, leveraging Templating engines, animation library integration (anime.js), and making the app dynamically pull api data from multiple adoption agencies.  
+ionic framework integration and hammer.js to build a better swipe feature (eventually a progressive web app), leveraging Templating engines, animation library integration (anime.js), and making the app dynamically pull api data from multiple adoption agencies.  
 
 CSS precompilers (SASS)
 
@@ -80,6 +80,10 @@ mysql workbench: https://www.mysql.com/products/workbench/
 docker: https://www.docker.com/
 
 postman: https://www.getpostman.com/
+
+jTinder: https://github.com/do-web/jTinder
+
+Materialize: https://materializecss.com/
 
 ### ** success(group6) Group Project Author(s):**
 
