@@ -3,13 +3,23 @@ body {
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
-    color: white;
-    /* height: 90vh; */
 }
 
 #four-o-four {
-    padding-top: 18%;
+    height: 100vh;
+    padding-top: 20%;
     text-align: center;
     width: 100%;
+    color: white;
 }
 
+/* Box frame to implement possibly */
+/* #box {
+    border: 2px solid white;
+    border-radius: 2em;
+    width: 33%;
+    margin: auto;
+    height: 44%;
+    margin-top: 10%; 
+    padding: 10% 0 16% 0;
+} */

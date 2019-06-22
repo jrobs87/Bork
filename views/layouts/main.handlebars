@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,7 +8,9 @@
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+ <script src="https://kit.fontawesome.com/69a389f11e.js"></script>
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+	
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!-- Compiled and minified CSS -->
@@ -23,11 +28,11 @@
 <body>
 
 	<div id="preLoader">
-		{{!-- <h3 class="loader-text qs" style="margin-top: 44vh">Bork</h3> --}}
+		<h3 class="loader-text qs" style="margin-top: 44vh"><i class="fas fa-paw"></i></h3>
 	</div>
 
 	<nav>
-		<div class="nav-wrapper black">
+		<div class="nav-wrapper black qs">
 			<div class="container">
 				<a href="/" class="brand-logo qs">Bork</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -61,15 +66,19 @@
 		$(window).ready(function () {
 			$('.sidenav').sidenav(); // init mobile nav menu
 
-			$('#preLoader').css('opacity', 0); 	// Simple trnaistion between pages
+			setTimeout(function () {
+				$('.loader-text').css('transform', 'scale(1.66');
+				$('.loader-text').css('opacity', '0');
+				$('#preLoader').css('opacity', 0); 	// Simple trnaistion between pages
+			}, 300)
 
 			// remove preloader after fading out
 			setTimeout(function () {
 				$('#preLoader').css('display', 'none');
-			}, 460);
+			}, 760);
 		});
 	</script>
-	
+
 </body>
 
 </html>
