@@ -13,7 +13,7 @@ $(document).ready(function () {
         for (i = 0; i < dogs.length; i++) {
 
             let li = $('<li>'); // line items for modal
-            let a = $('<a>'); // text links for mmodal
+            let a = $('<a>'); // text links for modal
             let divText = $('<div>'); // holder for dog name embedded in a tag
 
             let name = dogs[i].dog_name;
