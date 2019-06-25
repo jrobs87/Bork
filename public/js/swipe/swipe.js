@@ -92,6 +92,29 @@ $(document).ready(function () {
         e.preventDefault();
 
         $("#tinderslide").jTinder($(this).attr('class'));
+        console.log("you pressed it")
+    });
+
+    // Enables use of left and right arrow keys for like/ dislike
+    $(document).keydown(function(e) {
+        switch(e.which) {
+            case 37: // left
+            e.preventDefault();
+
+            $("#tinderslide").jTinder($(".dislike").attr('class'));
+
+            break;
+    
+            case 39: // right
+            e.preventDefault();
+
+            $("#tinderslide").jTinder($(".like").attr('class'));
+            
+            break;
+
+            default: return; // exit this handler for other keys
+        }
+        // i.preventDefault(); // prevent the default action (scroll / move caret)
     });
 
     if ($('#tinderList').children().length === 0) {
