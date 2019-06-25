@@ -21,7 +21,7 @@ CREATE TABLE swipes
 INSERT INTO swipes
     (dog_id, dog_name, dog_img, dog_url, yard, other_pets, kids, female, size)
 VALUES
-    (1, "Lady Bird", "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44807252/1/?bust=1560850263&width=1080", "https://www.petfinder.com/dog/lady-bird-44807252/ga/atlanta/atlanta-lab-rescue-ga508/", 1, 1, 0, 1, 1),
+    (1, "Lady Bird", "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44807252/1/?bust=1560850263&width=1080", "https://www.petfinder.com/dog/lady-bird-44807252/ga/atlanta/atlanta-lab-rescue-ga508/", 1, 1, 0, 1, 3),
     (2, "Caroline", "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43789666/1/?bust=1547743098&width=560", "https://www.petfinder.com/dog/caroline-43789666/ga/macon/all-about-animals-rescue-ga345/", 0, 0, 0, 1, 1),
     (3, "Bethany", "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44870646/1/?bust=1560850260&width=1080", "https://www.petfinder.com/dog/bethany-43789616/ga/macon/all-about-animals-rescue-ga345/", 1, 0, 0, 1, 1),
     (4, "Kiwi", "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/44819850/1/?bust=1560850282&width=1080", "https://www.petfinder.com/dog/kiwi-44819850/ga/atlanta/atlanta-lab-rescue-ga508/", 0, 1, 0, 1, 1),
