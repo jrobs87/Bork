@@ -92,25 +92,29 @@ module.exports = function (app) {
           for (z = 0; z < 5; z++) {
             // console.log(typeof dogCurrent[z]);
             if (typeof dogCurrent[z] === 'number') {
-             console.log(`Dog: ${dogCurrent[z]}  Human: ${userData[z]}`);
+              console.log(`Dog: ${dogCurrent[z]}  Human: ${userData[z]}`);
 
-              if(dogCurrent[z] == userData[z]) {
+              if (dogCurrent[z] == userData[z]) {
                 console.log(`Matched ${dbswipe[i].dog_name} by size!`);
                 propMatch++;
               }
 
             } else {
               console.log(`Dog: ${dogCurrent[z]}  Human: ${userData[z]}`);
-              if(dogCurrent[z].toString() === userData[z].toString()) {
+              if (dogCurrent[z].toString() === userData[z].toString()) {
                 console.log('Match');
                 propMatch++;
+
+                // Percent match to push to frontend to give feedback on how close the match is!
+                dbswipe[i].matchQuality = parseInt((propMatch / 5) * 100).toString();
+                console.log(`${dbswipe[i].matchQuality}%`);
               };
             }
-          
-          }
-          dbswipe[i].matchQuality = parseInt((propMatch / 5)*100).toString();
-          console.log(dbswipe[i].matchQuality);
 
+          }
+
+
+          // set this to 4-5 for an exact match - eventually return a percentage match - see above matchQuality
           if (propMatch >= 2) {
             dogMatches.push(dbswipe[i]);
           }
@@ -119,7 +123,7 @@ module.exports = function (app) {
         }
 
         // console.log(dogMatches.length);
- 
+
         hbsObject = dogMatches;
         res.render("swipe", hbsObject);
         console.log(
